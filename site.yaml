@@ -1,0 +1,4 @@
+- hosts: localhost
+  connection: local
+  become: no
+  gather_facts: false
