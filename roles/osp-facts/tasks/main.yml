@@ -5,6 +5,7 @@
       cloud: openstack
       region_name: regionOne
      register: result
+   - debug: var=result
    - name: Add host
      add_host:
       name: "{{ item.public_v4 }}"
