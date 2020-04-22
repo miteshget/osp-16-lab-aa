@@ -23,14 +23,14 @@
     allocation_pool_end: "{{ item.value.allocation_pool_end | default(omit) }}"
   with_dict: "{{ osp_networks }}"
 
-# - name: Create Router
-#   os_router:
-#     cloud: "{{ item.value.cloud_name }}"
-#     state: "{{ item.value.state }}"
-#     name: "{{ item.value.name }}"
-#     network: "{{ item.value.network }}"
-#     external_fixed_ips:
-#       - { subnet: ext_subnet }
-#     interfaces:
-#       - "{{ item.value.interfaces }}"
-#   with_dict: "{{ osp_router }}"
+- name: Create Router
+  os_router:
+    cloud: "{{ item.value.cloud_name }}"
+    state: "{{ item.value.state }}"
+    name: "{{ item.value.name }}"
+    network: "{{ item.value.network }}"
+    external_fixed_ips:
+      - { subnet: ext_subnet }
+    interfaces:
+      - "{{ item.value.interfaces }}"
+  with_dict: "{{ osp_router }}"
